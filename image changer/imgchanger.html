@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+  }
+  .img-container img{
+    height: 300px;
+   
+    border: 2px solid blue;
+    border-radius: 10px;
+  }
+  .img-container h2{
+    background-color: yellow;
+    color: black;
+
+  }
+  h2{
+    border-radius: 20px;
+    width: 180px;
+
+  }
+</style>`
+<body>
+  <h1>Image Changer</h1>
+  <div class="img-container">
+    <div class="img">
+      <img src="https://media.istockphoto.com/id/2194509213/photo/red-telephone-box-and-double-decker-bus-on-parliament-square-and-big-ben-tower-london-uk.jpg?s=612x612&w=0&k=20&c=fMVIr6jtOdL587fPJzext3aVHBUYfRO5WQ41cW81fno=" alt="">
+    </div>
+    <h2>London</h2>
+  </div>
+  
+  <script>
+    let img=document.querySelector('img');
+    let h2=document.querySelector('h2');
+    let prevImg=img.src;
+    let prevText=h2.innerText;
+    img.addEventListener('mouseover',()=>{
+      img.src="https://media.istockphoto.com/id/2151954540/photo/view-of-paris-with-eiffel-tower.jpg?s=1024x1024&w=is&k=20&c=hsd49LLQ81qlxMJV3Fd_pqFzcyDJxYhFoOVOnu-zbR8=";
+      img.style.border ='2px solid blue';
+      h2.innerText="Paris";
+    });
+    img.addEventListener('mouseleave',()=>{
+      img.src=prevImg;
+      h2.innerText=prevText;
+      img.style.border="2px solid yellow";
+    });
+  </script>
+</body>
+</html>
